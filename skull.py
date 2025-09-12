@@ -966,7 +966,7 @@ s26="""%%%%%%%%%%%%%%%*++++++++++++++++++++++++++++++++++++++++++++++++++++++**#
 ###############*******++++++++++++**************+++++***##%@@@@@@@@@#***###%%%%%%%%%%%%%%%
 """
 syst=sys.platform
-if syst =='liux':
+if syst =='linux':
     command='clear'
 elif syst=='win32':
     command="cls"
@@ -977,7 +977,10 @@ dance=[s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s2
 timestart=time.time()
 #music_path=os.path.join(os.getcwd(),"SkullMusic.mp3")
 pygame.mixer.init()
-pygame.mixer_music.load("SkullMusic.mp3")
+if syst=='linux':
+    pygame.mixer_music.load("/etc/SkullMusic.mp3")
+else:
+    pygame.mixer_music.load("SkullMusic.mp3")
 pygame.mixer.music.play(loops=-1)
 try:
     color=31
