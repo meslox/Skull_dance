@@ -7,3 +7,4 @@ else
 	chmod +x /usr/local/bin/skull
 	rm setup.sh
 fi
+#enter skull after setup
